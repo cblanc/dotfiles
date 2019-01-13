@@ -1,3 +1,4 @@
+DOTFILES_DIR := $(shell echo $(HOME)/dotfiles)
 UNAME := $(shell uname -s)
 
 ifeq ($(UNAME), Darwin)
@@ -13,9 +14,23 @@ init: install-deps
 install-deps: $(OS)
 
 .PHONY: macos
-macos: brew
+macos: homebrew
 
-.PHONY: brew
-brew:
+.PHONY: homebrew
+homebrew:
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	brew bundle --file=$(CURDIR)/macos/.Brewfile
+
+.PHONY: linux
+linux: apt-upgrade apt-install
+
+.PHONY: apt-install
+apt-install:	
+	apt-get update
+	cat $(CURDIR)/ubuntu/apt.txt | xargs sudo apt-get install -y
+
+.PHONY: apt-upgrade
+apt-upgrade:
+	apt-get update
+	apt-get upgrade -y
+
