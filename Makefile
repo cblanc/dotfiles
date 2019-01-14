@@ -34,3 +34,7 @@ apt-upgrade:
 	apt-get update
 	apt-get upgrade -y
 
+.PHONY: link
+link:
+	ln -nfs $(CURDIR)/git/.gitconfig ~/.gitconfig
+	ln -nsf $(CURDIR)/git/.gitignore_global ~/.gitignore_global
