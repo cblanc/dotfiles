@@ -39,3 +39,4 @@ link:
 	ln -nsf $(CURDIR)/git/.gitconfig ~/.gitconfig
 	ln -nsf $(CURDIR)/git/.gitignore_global ~/.gitignore_global
 	ln -nsf $(CURDIR)/bash/.inputrc ~/.inputrc
+	ln -nsf $(CURDIR)/bash/.curlrc ~/.curlrc
