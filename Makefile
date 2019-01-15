@@ -36,5 +36,6 @@ apt-upgrade:
 
 .PHONY: link
 link:
-	ln -nfs $(CURDIR)/git/.gitconfig ~/.gitconfig
+	ln -nsf $(CURDIR)/git/.gitconfig ~/.gitconfig
 	ln -nsf $(CURDIR)/git/.gitignore_global ~/.gitignore_global
+	ln -nsf $(CURDIR)/bash/.inputrc ~/.inputrc
