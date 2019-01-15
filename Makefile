@@ -8,7 +8,7 @@ else ifeq ($(UNAME), Linux)
 endif
 
 .PHONY: init
-init: install-deps
+init: install-deps link
 
 .PHONY: install-deps
 install-deps: $(OS)
@@ -19,7 +19,7 @@ macos: homebrew
 .PHONY: homebrew
 homebrew:
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-	brew bundle --file=$(CURDIR)/macos/.Brewfile
+	brew bundle --file=$(CURDIR)/macos/.Brewfile || true
 
 .PHONY: linux
 linux: apt-upgrade apt-install
