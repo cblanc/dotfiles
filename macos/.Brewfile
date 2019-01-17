@@ -19,3 +19,9 @@ brew "rbenv"
 
 tap "caskroom/fonts"
 cask "font-fira-code"
+
+cask "keybase"
+cask "iterm2"
+cask "google-chrome"
+cask "spotify"
+cask "sublime-text"
