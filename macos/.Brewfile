@@ -14,3 +14,6 @@ brew "heroku"
 brew "ghi"
 brew "kubernetes-cli"
 brew "imagemagick"
+
+tap "caskroom/fonts"
+cask "font-fira-code"
