@@ -18,9 +18,10 @@
 	ff = merge --ff-only
 	fa = fetch --all
 	pom = push origin master
+  rom = rebase origin/master
 	dh1 = diff HEAD~1
 	div = divergence
-  plog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  lo = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
 [merge]
 	tool = vimdiff
