@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+if [[ $PLATFORM == 'macos' ]]; then
+  alias ls='ls -G'
+  alias s='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+  alias smerge='/Applications/Sublime\ Merge.app/Contents/SharedSupport/bin/smerge'
+fi
+
+if [[ $PLATFORM == 'linux' ]]; then
+  alias ls='ls --color=auto'
+fi
+
+alias server='python -m SimpleHTTPServer'
+# Edit shortcuts
+alias e-bash="$EDITOR ~/.bash_profile"
+alias e-gitconfig="$EDITOR ~/.gitconfig"
+alias e-config="$EDITOR ~/.ssh/config"
+
+# doctl shortcuts
+alias dosh='doctl compute ssh'
+alias dcd='doctl compute droplet'
+

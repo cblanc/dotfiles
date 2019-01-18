@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+export PS1="\$(jobscount)\u@\h:\W\$(__git_ps1)$ "
+

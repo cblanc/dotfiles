@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# Prints out number of background and suspended jobs
+jobscount() {
+  local stopped=$(jobs -sp | wc -l | trim)
+  local running=$(jobs -rp | wc -l | trim)
+  ((running+stopped)) && echo -n "(${running}r/${stopped}s) "
+}
+
+# Nuke shell history and force exit (prevents memory from repopulating)
+# https://askubuntu.com/questions/191999/how-to-clear-bash-history-completely
+nuke_history() {
+  cat /dev/null > ~/.bash_history && history -c && exit
+}
+
+trim() {
+  awk '{$1=$1};1'
+}
+

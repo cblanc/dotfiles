@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# Detect platform
+PLATFORM='unknown'
+unamestr=`uname`
+if [[ "$unamestr" == 'Linux' ]]; then
+   PLATFORM='linux'
+elif [[ "$unamestr" == 'Darwin' ]]; then
+   PLATFORM='macos'
+fi
+export $PLATFORM
+ 
+# Fix for issue (Inappropriate ioctl for device): https://github.com/keybase/keybase-issues/issues/2798
+export GPG_TTY=$(tty)
+
+# Set default editor
+export EDITOR="vim"
+
