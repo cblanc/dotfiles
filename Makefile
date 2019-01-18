@@ -20,6 +20,12 @@ macos: homebrew
 homebrew:
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	brew bundle --file=$(CURDIR)/macos/.Brewfile || true
+	echo /usr/local/bin/bash | sudo tee -a /etc/shells # Use Bash 4.4 from homebrew
+	chsh -s /usr/local/bin/bash
+
+.PHONY: mac_defaults
+mac_defaults:
+	bash $(CURDIR)/macos/defaults.sh
 
 .PHONY: linux
 linux: apt-upgrade apt-install
