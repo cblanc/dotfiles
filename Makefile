@@ -54,6 +54,7 @@ link:
 	ln -nsf $(CURDIR)/bash/.inputrc ~/.inputrc
 	ln -nsf $(CURDIR)/bash/.curlrc ~/.curlrc
 	ln -nsf $(CURDIR)/bash/.bashrc ~/.bashrc
+	ln -nsf $(CURDIR)/bash/.bash_profile ~/.bash_profile
 	mkdir -p ~/.gnupg
 	ln -nsf $(CURDIR)/gnupg/gpg.conf ~/.gnupg/gpg.conf
 	ln -nsf $(CURDIR)/gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
