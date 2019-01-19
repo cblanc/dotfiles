@@ -1,5 +1,3 @@
-tap "caskroom/cask"
-
 brew "git"
 brew "git-secret"
 brew "git-lfs"
@@ -20,8 +18,8 @@ brew "rbenv"
 tap "caskroom/fonts"
 cask "font-fira-code"
 
+tap "caskroom/cask"
 cask "keybase"
-cask "iterm2"
 cask "google-chrome"
 cask "spotify"
 cask "sublime-text"
@@ -31,3 +29,6 @@ cask "flux"
 cask "little-snitch"
 cask "sublime-merge"
 cask "sketch"
+
+tap "homebrew/cask-versions"
+cask "iterm2-nightly"
