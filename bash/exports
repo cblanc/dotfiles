@@ -14,7 +14,17 @@ export $PLATFORM
 export GPG_TTY=$(tty)
 
 # Set default editor
-export EDITOR="vim"
+EDITOR="vi"
+
+if [ -x "$(command -v vim)" ]; then
+  EDITOR="vim"
+fi
+
+if [ -x "$(command -v nvim)" ]; then
+  EDITOR="nvim"
+fi
+
+export EDITOR
 
 source "${DOTFILE_BASH_DIR}/vendor/git-completion.bash"
 source "${DOTFILE_BASH_DIR}/vendor/iterm2_shell_integration.bash"
