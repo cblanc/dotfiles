@@ -15,7 +15,18 @@ nuke_history() {
   cat /dev/null > ~/.bash_history && history -c && exit
 }
 
+# Tims string
 trim() {
   awk '{$1=$1};1'
+}
+
+# Creates a new bash scaffold script
+n-bash() {
+  cp "${DOTFILE_DIR}/scaffold/main.sh" "$@" && chmod +x "$@"
+}
+
+# Scaffold Makefile
+n-makefile() {
+  cp "${DOTFILE_DIR}/scaffold/Makefile.help" "Makefile"
 }
 
