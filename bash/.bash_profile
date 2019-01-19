@@ -11,12 +11,15 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
   SOURCE="$(readlink "$SOURCE")"
   [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
 done
-DOTFILE_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+DOTFILE_BASH_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+export DOTFILE_BASH_DIR
+
+DOTFILE_DIR="$(dirname "$DOTFILE_BASH_DIR")"
 export DOTFILE_DIR
 
-source "${DOTFILE_DIR}/exports"
-source "${DOTFILE_DIR}/path"
-source "${DOTFILE_DIR}/func"
-source "${DOTFILE_DIR}/aliases"
-source "${DOTFILE_DIR}/prompt"
+source "${DOTFILE_BASH_DIR}/exports"
+source "${DOTFILE_BASH_DIR}/path"
+source "${DOTFILE_BASH_DIR}/func"
+source "${DOTFILE_BASH_DIR}/aliases"
+source "${DOTFILE_BASH_DIR}/prompt"
 

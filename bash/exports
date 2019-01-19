@@ -16,6 +16,6 @@ export GPG_TTY=$(tty)
 # Set default editor
 export EDITOR="vim"
 
-source "${DOTFILE_DIR}/vendor/git-completion.bash"
-source "${DOTFILE_DIR}/vendor/iterm2_shell_integration.bash"
+source "${DOTFILE_BASH_DIR}/vendor/git-completion.bash"
+source "${DOTFILE_BASH_DIR}/vendor/iterm2_shell_integration.bash"
 

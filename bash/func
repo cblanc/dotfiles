@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source "${DOTFILE_DIR}/vendor/git-prompt.sh"
+source "${DOTFILE_BASH_DIR}/vendor/git-prompt.sh"
 
 # Prints out number of background and suspended jobs
 jobscount() {
