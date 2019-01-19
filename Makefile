@@ -44,6 +44,11 @@ else ifeq ($(UNAME), Linux)
   OS := linux
 endif
 
+## Update repository
+.PHONY: update
+update:
+	git pull origin master
+
 ## -- Cross Platform Bootstrap --
 
 ## Create bash symlinks
