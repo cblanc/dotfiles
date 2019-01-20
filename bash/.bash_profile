@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# Load machine specific profile and bashrc
-[[ -f ~/.profile ]] && source ~/.profile
-
 # Resolve directory to dotfile bash directory
 # https://gist.github.com/TheMengzor/968e5ea87e99d9c41782<Paste>
 SOURCE="${BASH_SOURCE[0]}"
