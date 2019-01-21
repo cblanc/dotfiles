@@ -17,3 +17,5 @@ iotop
 gzip
 tar
 autoconf
+git
+

@@ -99,7 +99,7 @@ mac_defaults:
 
 ## Update repositories, upgrade existing packages and install linux dependencies
 .PHONY: linux
-linux: apt-upgrade apt-install set-timezone provision-root harden
+linux: apt-upgrade apt-install set-timezone provision-user harden
 
 ## Install linux packages
 .PHONY: apt-install
@@ -122,16 +122,16 @@ set-timezone:
 ## - Prompts for new user name and password
 ## - Adds user to sudo group
 ## - Copies root authorised_keys
-.PHONY: provision-root
+.PHONY: provision-user
 provision-root:
-	@read -p "Enter new username:" new_user; && \
-	adduser $new_user && \
-	usermod -a -G sudo $new_user && \
-	mkdir -p "/home/${new_user}/.ssh" && \
-	cp /root/.ssh/authorized_keys "/home/${new_user}/.ssh/authorized_keys" && \
-	chown -R "${new_user}:${new_user}" "/home/${new_user}/.ssh" && \
-	chmod 700 "/home/${new_user}/.ssh" && \
-  chmod 600 "/home/${new_user}/.ssh/authorized_keys" 
+	@read -p "Enter new username:" NEW_USER && \
+	adduser $$NEW_USER && \
+	usermod -a -G sudo $$NEW_USER && \
+	mkdir -p "/home/$${NEW_USER}/.ssh" && \
+	cp /root/.ssh/authorized_keys "/home/$${NEW_USER}/.ssh/authorized_keys" && \
+	chown -R "$${NEW_USER}:$${NEW_USER}" "/home/$${NEW_USER}/.ssh" && \
+	chmod 700 "/home/$${NEW_USER}/.ssh" && \
+  chmod 600 "/home/$${NEW_USER}/.ssh/authorized_keys" 
 
 ## Hardens network setup
 ## - Reconfigures sshd_config
