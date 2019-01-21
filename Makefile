@@ -99,7 +99,7 @@ mac_defaults:
 
 ## Update repositories, upgrade existing packages and install linux dependencies
 .PHONY: linux
-linux: apt-upgrade apt-install
+linux: apt-upgrade apt-install set-timezone provision-root harden
 
 ## Install linux packages
 .PHONY: apt-install
@@ -113,12 +113,17 @@ apt-upgrade:
 	apt-get update
 	apt-get upgrade -y
 
+## Sets timezone to UTC
+.PHONY: set-timezone
+set-timezone:
+	sudo timedatectl set-timezone UTC
+
 ## Provision a new non-root user
 ## - Prompts for new user name and password
 ## - Adds user to sudo group
 ## - Copies root authorised_keys
-.PHONY: provision_root
-provision_root:
+.PHONY: provision-root
+provision-root:
 	@read -p "Enter new username:" new_user; && \
 	adduser $new_user && \
 	usermod -a -G sudo $new_user && \
@@ -127,4 +132,23 @@ provision_root:
 	chown -R "${new_user}:${new_user}" "/home/${new_user}/.ssh" && \
 	chmod 700 "/home/${new_user}/.ssh" && \
   chmod 600 "/home/${new_user}/.ssh/authorized_keys" 
+
+## Hardens network setup
+## - Reconfigures sshd_config
+## - No root ssh
+## - fail2ban
+## - ipv4 ipv6 iptables setup
+.PHONY: harden
+harden:
+	sudo cp $(CURDIR)/linux/etc/sshd_config /etc/ssh/sshd_config
+	chown root:root /etc/ssh/sshd_config
+	chmod 644 /etc/ssh/sshed_config
+	sudo ssh-keygen -A
+	systemctl restart ssh.server
+	sudo apt-get install fail2ban
+	sudo cp $(CURDIR)/linux/etc/ipv4.firewall /etc/ipv4.firewall
+	sudo cp $(CURDIR)/linux/etc/ipv6.firewall /etc/ipv6.firewall
+	sudo cp $(CURDIR)/linux/etc/load-firewall /etc/network/if-up.d/load-firewall
+	sudo chmod +x /etc/network/if-up.d/load-firewall
+	sudo apt-get install unattended-upgrades
 
