@@ -18,5 +18,6 @@ alias e-config="$EDITOR ~/.ssh/config"
 
 # doctl shortcuts
 alias dosh='doctl compute ssh'
+alias dosh-root='doctl compute ssh --ssh-user root'
 alias dcd='doctl compute droplet'
 
