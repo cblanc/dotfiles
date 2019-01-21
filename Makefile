@@ -113,3 +113,18 @@ apt-upgrade:
 	apt-get update
 	apt-get upgrade -y
 
+## Provision a new non-root user
+## - Prompts for new user name and password
+## - Adds user to sudo group
+## - Copies root authorised_keys
+.PHONY: provision_root
+provision_root:
+	@read -p "Enter new username:" new_user; && \
+	adduser $new_user && \
+	usermod -a -G sudo $new_user && \
+	mkdir -p "/home/${new_user}/.ssh" && \
+	cp /root/.ssh/authorized_keys "/home/${new_user}/.ssh/authorized_keys" && \
+	chown -R "${new_user}:${new_user}" "/home/${new_user}/.ssh" && \
+	chmod 700 "/home/${new_user}/.ssh" && \
+  chmod 600 "/home/${new_user}/.ssh/authorized_keys" 
+
