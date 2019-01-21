@@ -103,15 +103,38 @@ linux: apt-upgrade apt-install set-timezone link
 
 ## Install linux packages
 .PHONY: apt-install
-apt-install:	
-	sudo apt-get update
+apt-install: apt-update	install-ubuntu-packages neovim keybase
+
+## Install packages from packages.ubuntu.com
+.PHONY: install-ubuntu-packages
+install-ubuntu-packages:
 	cat $(CURDIR)/ubuntu/apt.txt | xargs sudo apt-get install -y
+
+## Install keybase
+.PHONY: keybase
+keybase:
+	cd /tmp && \
+	curl -O https://prerelease.keybase.io/keybase_amd64.deb && \
+	sudo dpkg -i keybase_amd64.deb || true && \
+	sudo apt-get install -f && \
+	run_keybase && \
+	rm keybase_amd64.deb
+
+## Install neovim
+.PHONY: neovim
+neovim: apt-update
+	sudo add-apt-repository ppa:neovim-ppa/stable -y
+	sudo apt-get install neovim -y
 
 ## Upgrade linux packages
 .PHONY: apt-upgrade
-apt-upgrade:
-	sudo apt-get update
+apt-upgrade: apt-update
 	sudo apt-get upgrade -y
+
+## Update package lists
+.PHONY: apt-update
+apt-update:
+	sudo apt-get update
 
 ## Sets timezone to UTC
 .PHONY: set-timezone
