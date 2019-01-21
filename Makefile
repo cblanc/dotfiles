@@ -103,7 +103,7 @@ linux: apt-upgrade apt-install set-timezone link
 
 ## Install linux packages
 .PHONY: apt-install
-apt-install: apt-update	install-ubuntu-packages neovim keybase
+apt-install: apt-update	install-ubuntu-packages neovim keybase docker
 
 ## Install packages from packages.ubuntu.com
 .PHONY: install-ubuntu-packages
@@ -116,7 +116,7 @@ keybase:
 	cd /tmp && \
 	curl -O https://prerelease.keybase.io/keybase_amd64.deb && \
 	sudo dpkg -i keybase_amd64.deb || true && \
-	sudo apt-get install -f && \
+	sudo apt-get install -f -y && \
 	run_keybase && \
 	rm keybase_amd64.deb
 
@@ -130,7 +130,7 @@ neovim:
 ## Install docker and docker-compose
 .PHONY: docker
 docker: apt-update
-	sudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common
+	sudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common -y
 	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 	sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
