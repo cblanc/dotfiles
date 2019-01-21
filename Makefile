@@ -99,7 +99,7 @@ mac_defaults:
 
 ## Update repositories, upgrade existing packages and install linux dependencies
 .PHONY: linux
-linux: apt-upgrade apt-install set-timezone provision-user harden
+linux: apt-upgrade apt-install set-timezone
 
 ## Install linux packages
 .PHONY: apt-install
@@ -118,20 +118,26 @@ apt-upgrade:
 set-timezone:
 	sudo timedatectl set-timezone UTC
 
+## Provisions and hardens root user
+## - Creates a new user and copies SSH public key
+## - Hardens server and disable root user
+.PHONY: provision-root
+provision-root: provision-user harden
+
 ## Provision a new non-root user
 ## - Prompts for new user name and password
 ## - Adds user to sudo group
 ## - Copies root authorised_keys
 .PHONY: provision-user
-provision-root:
+provision-user:
 	@read -p "Enter new username:" NEW_USER && \
 	adduser $$NEW_USER && \
-	usermod -a -G sudo $$NEW_USER && \
-	mkdir -p "/home/$${NEW_USER}/.ssh" && \
-	cp /root/.ssh/authorized_keys "/home/$${NEW_USER}/.ssh/authorized_keys" && \
-	chown -R "$${NEW_USER}:$${NEW_USER}" "/home/$${NEW_USER}/.ssh" && \
-	chmod 700 "/home/$${NEW_USER}/.ssh" && \
-  chmod 600 "/home/$${NEW_USER}/.ssh/authorized_keys" 
+	sudo usermod -a -G sudo $$NEW_USER && \
+	sudo mkdir -p "/home/$${NEW_USER}/.ssh" && \
+	sudo cp /root/.ssh/authorized_keys "/home/$${NEW_USER}/.ssh/authorized_keys" && \
+	sudo chown -R "$${NEW_USER}:$${NEW_USER}" "/home/$${NEW_USER}/.ssh" && \
+	sudo chmod 700 "/home/$${NEW_USER}/.ssh" && \
+  sudo chmod 600 "/home/$${NEW_USER}/.ssh/authorized_keys" 
 
 ## Hardens network setup
 ## - Reconfigures sshd_config
@@ -140,15 +146,15 @@ provision-root:
 ## - ipv4 ipv6 iptables setup
 .PHONY: harden
 harden:
-	sudo cp $(CURDIR)/linux/etc/sshd_config /etc/ssh/sshd_config
-	chown root:root /etc/ssh/sshd_config
-	chmod 644 /etc/ssh/sshed_config
+	sudo cp $(CURDIR)/ubuntu/etc/sshd_config /etc/ssh/sshd_config
+	sudo chown root:root /etc/ssh/sshd_config
+	sudo chmod 644 /etc/ssh/sshd_config
 	sudo ssh-keygen -A
-	systemctl restart ssh.server
+	sudo systemctl restart ssh.service
 	sudo apt-get install fail2ban
-	sudo cp $(CURDIR)/linux/etc/ipv4.firewall /etc/ipv4.firewall
-	sudo cp $(CURDIR)/linux/etc/ipv6.firewall /etc/ipv6.firewall
-	sudo cp $(CURDIR)/linux/etc/load-firewall /etc/network/if-up.d/load-firewall
+	sudo cp $(CURDIR)/ubuntu/etc/ipv4.firewall /etc/ipv4.firewall
+	sudo cp $(CURDIR)/ubuntu/etc/ipv6.firewall /etc/ipv6.firewall
+	sudo cp $(CURDIR)/ubuntu/etc/load-firewall /etc/network/if-up.d/load-firewall
 	sudo chmod +x /etc/network/if-up.d/load-firewall
 	sudo apt-get install unattended-upgrades
 
