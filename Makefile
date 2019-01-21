@@ -99,7 +99,7 @@ mac_defaults:
 
 ## Update repositories, upgrade existing packages and install linux dependencies
 .PHONY: linux
-linux: apt-upgrade apt-install set-timezone
+linux: apt-upgrade apt-install set-timezone link
 
 ## Install linux packages
 .PHONY: apt-install
@@ -137,7 +137,7 @@ provision-user:
 	sudo cp /root/.ssh/authorized_keys "/home/$${NEW_USER}/.ssh/authorized_keys" && \
 	sudo chown -R "$${NEW_USER}:$${NEW_USER}" "/home/$${NEW_USER}/.ssh" && \
 	sudo chmod 700 "/home/$${NEW_USER}/.ssh" && \
-  sudo chmod 600 "/home/$${NEW_USER}/.ssh/authorized_keys" 
+	sudo chmod 600 "/home/$${NEW_USER}/.ssh/authorized_keys" 
 
 ## Hardens network setup
 ## - Reconfigures sshd_config
