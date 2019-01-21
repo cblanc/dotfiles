@@ -29,3 +29,6 @@ export EDITOR
 source "${DOTFILE_BASH_DIR}/vendor/git-completion.bash"
 source "${DOTFILE_BASH_DIR}/vendor/iterm2_shell_integration.bash"
 
+# Set nvm home directory
+export NVM_DIR="$HOME/.nvm"
+

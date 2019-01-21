@@ -30,3 +30,7 @@ n-makefile() {
   cp "${DOTFILE_DIR}/scaffold/Makefile.help" "Makefile"
 }
 
+# Load nvm
+l-nvm() {
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+}

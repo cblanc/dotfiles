@@ -73,6 +73,16 @@ init: install-deps link
 .PHONY: install-deps
 install-deps: $(OS)
 
+## Installs nvm
+.PHONY: nvm
+nvm:
+	git clone https://github.com/creationix/nvm.git ~/.nvm
+	cd ~/.nvm && \
+  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
+
+
+
+
 ## -- Macos Bootstrap --
 
 ## Install macos dependencies
@@ -94,6 +104,10 @@ homebrew:
 .PHONY: mac_defaults
 mac_defaults:
 	bash $(CURDIR)/macos/defaults.sh
+
+
+
+
 
 ## -- Linux Bootstrap --
 
