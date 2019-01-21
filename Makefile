@@ -156,5 +156,6 @@ harden:
 	sudo cp $(CURDIR)/ubuntu/etc/ipv6.firewall /etc/ipv6.firewall
 	sudo cp $(CURDIR)/ubuntu/etc/load-firewall /etc/network/if-up.d/load-firewall
 	sudo chmod +x /etc/network/if-up.d/load-firewall
+	sudo /etc/network/if-up.d/load-firewall
 	sudo apt-get install unattended-upgrades
 
