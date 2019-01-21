@@ -104,14 +104,14 @@ linux: apt-upgrade apt-install set-timezone link
 ## Install linux packages
 .PHONY: apt-install
 apt-install:	
-	apt-get update
+	sudo apt-get update
 	cat $(CURDIR)/ubuntu/apt.txt | xargs sudo apt-get install -y
 
 ## Upgrade linux packages
 .PHONY: apt-upgrade
 apt-upgrade:
-	apt-get update
-	apt-get upgrade -y
+	sudo apt-get update
+	sudo apt-get upgrade -y
 
 ## Sets timezone to UTC
 .PHONY: set-timezone
