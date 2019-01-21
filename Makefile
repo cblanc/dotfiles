@@ -122,8 +122,9 @@ keybase:
 
 ## Install neovim
 .PHONY: neovim
-neovim: apt-update
+neovim:
 	sudo add-apt-repository ppa:neovim-ppa/stable -y
+	sudo apt-get update
 	sudo apt-get install neovim -y
 
 ## Install docker and docker-compose
