@@ -139,6 +139,7 @@ docker: apt-update
 	sudo apt-get update
 	sudo apt-get install docker-ce -y
 	sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$$(uname -s)-$$(uname -m)" -o /usr/local/bin/docker-compose
+	sudo chmod +x /usr/local/bin/docker-compose
 
 ## Upgrade linux packages
 .PHONY: apt-upgrade
@@ -167,7 +168,7 @@ provision-root: provision-user harden
 ## - Copies root authorised_keys
 .PHONY: provision-user
 provision-user:
-	@read -p "Enter new username:" NEW_USER && \
+	@read -p "Enter new username: " NEW_USER && \
 	adduser $$NEW_USER && \
 	sudo usermod -a -G sudo $$NEW_USER && \
 	sudo mkdir -p "/home/$${NEW_USER}/.ssh" && \
