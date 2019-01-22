@@ -34,3 +34,9 @@ n-makefile() {
 l-nvm() {
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 }
+
+# Load rvm
+l-rvm() {
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+}
+
