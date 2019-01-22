@@ -22,7 +22,7 @@ trim() {
 
 # Creates a new bash scaffold script
 n-bash() {
-  cp "${DOTFILE_DIR}/scaffold/main.sh" "$@" && chmod +x "$@"
+  cp "${DOTFILE_DIR}/scaffold/main.bash" "$@" && chmod +x "$@"
 }
 
 # Scaffold Makefile
