@@ -20,3 +20,5 @@ source "${DOTFILE_BASH_DIR}/func"
 source "${DOTFILE_BASH_DIR}/aliases"
 source "${DOTFILE_BASH_DIR}/prompt"
 
+[[ -f ~/.chrxv.bash ]] && source ~/.chrxv.bash
+
