@@ -13,6 +13,7 @@ brew "ghi"
 brew "kubernetes-cli"
 brew "imagemagick"
 brew "libpq", link: true
+brew "chrome-cli"
 
 tap "caskroom/fonts"
 cask "font-fira-code"
