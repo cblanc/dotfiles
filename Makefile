@@ -44,10 +44,15 @@ else ifeq ($(UNAME), Linux)
   OS := linux
 endif
 
+## Bootstrap new host
+.PHONY: init
+init: install-deps link
+
 ## Update repository
 .PHONY: update
 update:
-	git pull origin master
+	git fetch
+	git merge --ff-only origin/master
 
 ## -- Cross Platform Bootstrap --
 
@@ -64,10 +69,6 @@ link:
 	ln -nsf $(CURDIR)/gnupg/gpg.conf ~/.gnupg/gpg.conf
 	ln -nsf $(CURDIR)/gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 	ln -nsf $(CURDIR)/bash/.editorconfig ~/.editorconfig
-
-## Bootstrap new host
-.PHONY: init
-init: install-deps link
 
 ## Install dependencies
 .PHONY: install-deps

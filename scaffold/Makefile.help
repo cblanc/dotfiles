@@ -38,15 +38,16 @@ help:
 		}' \
 		$(MAKEFILE_LIST)
 
-## -- QA Task Runners --
+## -- Main Methods -- 
 
-## Run linter
-.PHONY: lint
-lint:
-	exit 0
+## Initialise repository
+.PHONY: init
+init:
+	echo 'Make it so'
 
+## Update repository against origin/master
+.PHONY: update
+update:
+	git fetch
+	git merge --ff-only origin/master
 
-## Run unit and integration tests
-.PHONY: test
-test:
-	exit 0
