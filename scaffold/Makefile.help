@@ -1,9 +1,21 @@
 .DEFAULT_GOAL := help
 
-## -- Section Delimiter --
+## -- Main Methods --
 
-## This help message
-## Which can also be multiline
+## Initialise repository
+.PHONY: init
+init:
+	echo 'Make it so'
+
+## Update repository against origin/master
+.PHONY: update
+update:
+	git fetch
+	git merge --ff-only origin/master
+
+## -- Misc --
+
+## How to use this Makefile
 .PHONY: help
 help:
 	@printf "Usage\n";
@@ -37,17 +49,4 @@ help:
 			} \
 		}' \
 		$(MAKEFILE_LIST)
-
-## -- Main Methods -- 
-
-## Initialise repository
-.PHONY: init
-init:
-	echo 'Make it so'
-
-## Update repository against origin/master
-.PHONY: update
-update:
-	git fetch
-	git merge --ff-only origin/master
 
