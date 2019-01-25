@@ -16,4 +16,5 @@ tmp
 *.pyc
 cache
 .cache
+Session.vim
 
