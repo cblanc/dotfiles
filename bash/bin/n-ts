@@ -29,10 +29,10 @@ echo "Git repository created"
 echo ""
 
 echo "Updating README.md"
-sed -i -e "s/enceladus/$project_name/g" "$project_dir/README.md"
+sed -i '' -e "s/enceladus/$project_name/g" "$project_dir/README.md"
 
 echo "Updating package.json"
-sed -i -e "s/enceladus/$project_name/g" "$project_dir/package.json"
+sed -i '' -e "s/enceladus/$project_name/g" "$project_dir/package.json"
 
 echo "Installing node dependencies via npm..."
 mkdir -p "$project_dir/node_modules"
