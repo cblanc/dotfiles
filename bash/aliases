@@ -21,3 +21,8 @@ alias dosh='doctl compute ssh'
 alias dosh-root='doctl compute ssh --ssh-user root'
 alias dcd='doctl compute droplet'
 
+# Shortcuts
+alias z='git lo'
+alias x='git status'
+alias d='cd ~/dotfiles'
+alias a='cd ~/Desktop'
