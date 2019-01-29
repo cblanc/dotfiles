@@ -12,7 +12,11 @@ if [[ $PLATFORM == 'linux' ]]; then
   alias f='BROWSER="lynx" git-open.bash'
 fi
 
+# Launch HTTP Server
 alias server='python -m SimpleHTTPServer'
+
+# Launch silversearch with default ignore
+alias ag='ag --path-to-ignore ~/.ignore'
 
 # Edit shortcuts
 alias e-bash="$EDITOR ~/.bash_profile"
