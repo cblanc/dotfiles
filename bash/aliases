@@ -2,7 +2,7 @@
 
 if [[ $PLATFORM == 'macos' ]]; then
   alias ls='ls -G'
-  alias s='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+  alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
   alias smerge='/Applications/Sublime\ Merge.app/Contents/SharedSupport/bin/smerge'
 fi
 
@@ -11,6 +11,7 @@ if [[ $PLATFORM == 'linux' ]]; then
 fi
 
 alias server='python -m SimpleHTTPServer'
+
 # Edit shortcuts
 alias e-bash="$EDITOR ~/.bash_profile"
 alias e-gitconfig="$EDITOR ~/.gitconfig"
@@ -25,5 +26,8 @@ alias dcd='doctl compute droplet'
 alias z='git lo'
 alias x='git status'
 alias c='git commit'
+alias v='git diff'
 alias d='cd ~/dotfiles'
-alias a='cd ~/Desktop'
+alias s='cd ~/Desktop'
+alias a='cd ~'
+
