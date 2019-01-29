@@ -9,6 +9,11 @@ jobscount() {
   ((running+stopped)) && echo -n "(${running}r/${stopped}s) "
 }
 
+# Prints dot if background jobs
+jobsindicator() {
+  (( $(jobs | wc -l) > 0 )) && echo -n "☉ "  
+}
+
 # Nuke shell history and force exit (prevents memory from repopulating)
 # https://askubuntu.com/questions/191999/how-to-clear-bash-history-completely
 nuke_history() {
