@@ -4,10 +4,12 @@ if [[ $PLATFORM == 'macos' ]]; then
   alias ls='ls -G'
   alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
   alias smerge='/Applications/Sublime\ Merge.app/Contents/SharedSupport/bin/smerge'
+  alias f='BROWSER="chrome-cli open" git-open.bash'
 fi
 
 if [[ $PLATFORM == 'linux' ]]; then
   alias ls='ls --color=auto'
+  alias f='BROWSER="lynx" git-open.bash'
 fi
 
 alias server='python -m SimpleHTTPServer'
@@ -30,5 +32,4 @@ alias v='git diff'
 alias d='cd ~/dotfiles'
 alias s='cd ~/Desktop'
 alias a='cd ~'
-alias f='BROWSER="chrome-cli open" git-open.bash'
 
