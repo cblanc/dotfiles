@@ -1,39 +1,39 @@
 [user]
-	signingkey = ED752FEC51A98CFE
-	name = Chris Blanchard
-	email = cablanchard@gmail.com
+  signingkey = ED752FEC51A98CFE
+  name = Chris Blanchard
+  email = cablanchard@gmail.com
 
 [commit]
-	gpgsign = true
+  gpgsign = true
   verbose = true
 
 [color]
-	ui = true
+  ui = true
 
 [alias]
-	s = status
-	co = checkout
-	d = diff
-	aa = add --all
-	ff = merge --ff-only
-	fa = fetch --all
-	pom = push origin master
+  s = status
+  co = checkout
+  d = diff
+  aa = add --all
+  ff = merge --ff-only
+  fa = fetch --all
+  pom = push origin master
   rom = rebase origin/master
-	dh1 = diff HEAD~1
-	div = divergence
+  dh1 = diff HEAD~1
+  div = divergence
   lo = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
 [merge]
-	tool = vimdiff
+  tool = vimdiff
 
 [filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
 
 [core]
-	excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore_global
   editor=$EDITOR
   untrackedCache = true
   trustctime = false
@@ -47,28 +47,28 @@
   pushInsteadOf = "git://github.com/"
 
 [color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
+  current = yellow reverse
+  local = yellow
+  remote = green
 
 [color "diff"]
-	meta = yellow
-	frag = magenta bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
-	commit = yellow bold
+  meta = yellow
+  frag = magenta bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
+  commit = yellow bold
 
 [color "status"]
-	added = yellow
-	changed = blue
-	untracked = red
+  added = yellow
+  changed = blue
+  untracked = red
 
 [diff "bin"]
-	textconv = hexdump -v -C
+  textconv = hexdump -v -C
 
 [github]
-	user = cblanc
+  user = cblanc
 
 [ghi]
-	token = !security find-internet-password -a cblanc -s github.com -l 'ghi token' -w
+  token = !security find-internet-password -a cblanc -s github.com -l 'ghi token' -w
