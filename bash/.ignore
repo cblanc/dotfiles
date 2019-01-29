@@ -1,0 +1,24 @@
+# Serves as an ignore file for `ag` or silver searcher
+.DS_Store
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+secring.*
+.log
+*.sw[nop]
+coverage
+node_modules
+tmp
+*.pyc
+cache
+.cache
+Session.vim
+
+dist
+docs
+logs
+.git

@@ -34,6 +34,7 @@ link:
 	ln -nsf $(CURDIR)/gnupg/gpg.conf ~/.gnupg/gpg.conf
 	ln -nsf $(CURDIR)/gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 	ln -nsf $(CURDIR)/bash/.editorconfig ~/.editorconfig
+	ln -nsf $(CURDIR)/bash/.ignore ~/.ignore
 
 ## Install dependencies
 .PHONY: install-deps
