@@ -30,4 +30,5 @@ alias v='git diff'
 alias d='cd ~/dotfiles'
 alias s='cd ~/Desktop'
 alias a='cd ~'
+alias f='BROWSER="chrome-cli open" git-open.bash'
 
