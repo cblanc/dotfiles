@@ -38,3 +38,10 @@ alias d='cd ~/dotfiles'
 alias s='cd ~/Desktop'
 alias a='cd ~'
 
+# Navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+# Reload bash profile
+alias re='source ~/.bash_profile'
