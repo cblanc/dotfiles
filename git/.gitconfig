@@ -11,16 +11,13 @@
   ui = true
 
 [alias]
-  s = status
   co = checkout
-  d = diff
   aa = add --all
   ff = merge --ff-only
   fa = fetch --all
   pom = push origin master
   rom = rebase origin/master
   dh1 = diff HEAD~1
-  div = divergence
   lo = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
 [merge]
