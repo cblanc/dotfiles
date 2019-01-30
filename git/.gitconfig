@@ -19,6 +19,7 @@
   rom = rebase origin/master
   dh1 = diff HEAD~1
   lo = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  fh = log --follow -p --
 
 [merge]
   tool = vimdiff
