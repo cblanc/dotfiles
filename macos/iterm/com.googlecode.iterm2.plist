@@ -284,9 +284,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>601 274 606 469 0 0 3008 1692 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1257 975 918 566 0 0 3008 1692 </string>
+	<string>1257 975 814 486 0 0 3008 1692 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>859 867 1290 802 0 0 3008 1669 </string>
+	<string>859 890 1290 802 0 0 3008 1692 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>2 1323 1130 445 0 0 3008 1692 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -954,7 +954,7 @@
 			<key>Shortcut</key>
 			<string></string>
 			<key>Show Mark Indicators</key>
-			<true/>
+			<false/>
 			<key>Show Status Bar</key>
 			<true/>
 			<key>Silence Bell</key>
@@ -1691,7 +1691,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>12E05BA5-156B-4199-BE84-A741AFAE2DAD</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>6</integer>
+	<integer>8</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2455,7 +2455,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-01-28T07:18:30Z</date>
+	<date>2019-01-30T07:27:47Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
