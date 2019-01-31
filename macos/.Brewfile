@@ -15,6 +15,7 @@ brew "imagemagick"
 brew "libpq", link: true
 brew "chrome-cli"
 brew "go"
+brew "mutt"
 
 tap "caskroom/fonts"
 cask "font-fira-code"
