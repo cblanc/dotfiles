@@ -46,3 +46,21 @@ l-rvm() {
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 }
 
+# Open directory or $1 with default editor
+function p() {
+  if [ $# -eq 0 ]; then
+    "${EDITOR}" .
+  else
+    "${EDITOR}" "$@"
+  fi
+}
+
+# Open directory or $1 with neovim
+function o() {
+  if [ $# -eq 0 ]; then
+    nvim .
+  else
+    nvim "$@"
+  fi
+}
+
