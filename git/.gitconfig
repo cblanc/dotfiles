@@ -41,12 +41,15 @@
 
 [url "git@github.com:"]
   insteadOf = "gh:"
+  pushInsteadOf = "git@github.com:"
 
 [url "git@github.com:cblanc/"]
-  insteadOf = "gc/"
+  insteadOf = "gc:"
+  pushInsteadOf = "git@github.com:cblanc/"
 
 [url "git@github.com:ideal-postcodes/"]
-  insteadOf = "gi/"
+  insteadOf = "gi:"
+  pushInsteadOf = "git@github.com:ideal-postcodes/"
 
 [color "branch"]
   current = yellow reverse
