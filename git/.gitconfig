@@ -43,10 +43,10 @@
   insteadOf = "gh:"
 
 [url "git@github.com:cblanc/"]
-  insteadOf = "gc:"
+  insteadOf = "gc/"
 
 [url "git@github.com:ideal-postcodes/"]
-  insteadOf = "gi:"
+  insteadOf = "gi/"
 
 [color "branch"]
   current = yellow reverse
