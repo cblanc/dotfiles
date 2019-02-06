@@ -35,7 +35,7 @@ alias c='git commit'
 alias C='git aa && git commit'
 alias v='git diff'
 alias d='cd ~/dotfiles'
-alias s='cd ~/Desktop'
+alias s='cd ~/dev'
 alias a='cd ~'
 
 # Navigation
