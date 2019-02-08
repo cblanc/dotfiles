@@ -24,6 +24,7 @@ update:
 ## Create bash symlinks
 .PHONY: link
 link:
+	mkdir -p ~/dev
 	ln -nsf $(CURDIR)/git/.gitconfig ~/.gitconfig
 	ln -nsf $(CURDIR)/git/.gitignore_global ~/.gitignore_global
 	ln -nsf $(CURDIR)/bash/.inputrc ~/.inputrc
