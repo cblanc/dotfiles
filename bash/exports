@@ -34,3 +34,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # Close only after C-d hit 10 times
 export IGNOREEOF=10
+
+# Global directory for symlinked node_modules
+export GLOBAL_NODE_MODULES=/tmp/.global_node_modules/
+

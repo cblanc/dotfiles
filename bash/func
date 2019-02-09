@@ -64,3 +64,33 @@ function o() {
   fi
 }
 
+# Moves node_modules directory to /tmp/.global_node_modules/<project-name>/node_modules
+# - Deletes local node modules
+# - Creates tmp node modules directory
+# - Creates symlink
+# - npm i
+function nm-ln() {
+  TARGET_DIR="${GLOBAL_NODE_MODULES}${PWD##*/}/node_modules/"
+  SOURCE_DIR="$(pwd)/node_modules"
+  echo "Creating node_modules at $TARGET_DIR"
+
+  echo "Wiping $SOURCE_DIR"
+  rm -rf $SOURCE_DIR
+
+  echo "Wiping $TARGET_DIR"
+  rm -rf $TARGET_DIR
+
+  echo "Installing symlinked node_modules"
+  mkdir -p $TARGET_DIR
+  ln -nsf $TARGET_DIR $SOURCE_DIR
+  npm install
+  echo "Created new node_modules directory, symlinked to  $TARGET_DIR"
+}
+
+# Wipe all node modules
+function nm-nuke() {
+  echo "Wiping all node_modules stored at $GLOBAL_NODE_MODULES"
+  rm -rf $GLOBAL_NODE_MODULES
+  echo "Done"
+}
+
