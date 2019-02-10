@@ -45,3 +45,6 @@ alias ....="cd ../../.."
 
 # Reload bash profile
 alias re='source ~/.bash_profile'
+
+# git
+alias gc="git clone"
