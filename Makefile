@@ -127,6 +127,7 @@ neovim:
 	sudo add-apt-repository ppa:neovim-ppa/stable -y
 	sudo apt-get update
 	sudo apt-get install neovim -y
+	mkdir -p ~/.local/share/nvim/
 	sudo chown -R "$$(whoami):$$(whoami)" ~/.local/share/nvim/ # Fix for inappropriate permissions
 
 ## Install docker and docker-compose
