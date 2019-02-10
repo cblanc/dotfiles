@@ -1,7 +1,10 @@
 [user]
   signingkey = ED752FEC51A98CFE
-  name = Chris Blanchard
+  name = Christopher Blanchard
   email = cablanchard@gmail.com
+
+[include]
+	path = .gitconfig.override
 
 [commit]
   gpgsign = true
