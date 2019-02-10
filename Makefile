@@ -66,6 +66,7 @@ add-gpg-keys:
 vim:
 	rm -rf ~/.vim
 	git clone --recurse-submodules -j8 https://github.com/cblanc/.vim ~/.vim
+	cd ~/.vim && make init
 
 
 
