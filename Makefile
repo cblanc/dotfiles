@@ -103,7 +103,7 @@ mac_defaults:
 
 ## Update repositories, upgrade existing packages and install linux dependencies
 .PHONY: linux
-linux: apt-upgrade apt-install vim set-timezone link
+linux: apt-upgrade apt-install vim set-timezone link nvm
 
 ## Install linux packages
 .PHONY: apt-install
