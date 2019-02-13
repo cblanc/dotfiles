@@ -34,6 +34,8 @@ link:
 	mkdir -p ~/.gnupg
 	ln -nsf $(CURDIR)/gnupg/gpg.conf ~/.gnupg/gpg.conf
 	ln -nsf $(CURDIR)/gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
+	chown -R "$$(whoami)" ~/.gnupg
+	chmod 600 $(CURDIR)/gnupg/gpg.conf $(CURDIR)/gnupg/gpg-agent.conf
 	ln -nsf $(CURDIR)/bash/.editorconfig ~/.editorconfig
 	ln -nsf $(CURDIR)/bash/.ignore ~/.ignore
 
