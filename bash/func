@@ -49,7 +49,7 @@ l-rvm() {
 # Open directory or $1 with default editor
 function p() {
   if [ $# -eq 0 ]; then
-    "${EDITOR}" .
+    "${EDITOR}"
   else
     "${EDITOR}" "$@"
   fi
@@ -58,7 +58,7 @@ function p() {
 # Open directory or $1 with neovim
 function o() {
   if [ $# -eq 0 ]; then
-    nvim .
+    nvim
   else
     nvim "$@"
   fi
