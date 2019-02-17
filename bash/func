@@ -94,3 +94,7 @@ function nm-nuke() {
   echo "Done"
 }
 
+# Reload bash profile
+function reload() {
+  source ~/.bash_profile
+}
