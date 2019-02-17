@@ -20,4 +20,5 @@ tar
 autoconf
 git
 lynx
+rng-tools
 
