@@ -48,3 +48,8 @@ alias re='source ~/.bash_profile'
 
 # git
 alias gc="git clone"
+
+# gpg
+alias gpg-new="gpg --default-new-key-algo rsa4096 --gen-key"
+alias gpg-list="gpg --list-secret-keys --keyid-format LONG"
+alias gpg-export="gpg --armor --export"
