@@ -197,12 +197,17 @@ harden:
 	sudo ssh-keygen -A
 	sudo systemctl restart ssh.service
 	sudo apt-get install fail2ban -y
+	sudo make iptables
+	sudo apt-get install unattended-upgrades -y
+
+## Setup iptables
+.PHONY: iptables
+iptables:
 	sudo cp $(CURDIR)/ubuntu/etc/ipv4.firewall /etc/ipv4.firewall
 	sudo cp $(CURDIR)/ubuntu/etc/ipv6.firewall /etc/ipv6.firewall
 	sudo cp $(CURDIR)/ubuntu/etc/load-firewall /etc/network/if-up.d/load-firewall
 	sudo chmod +x /etc/network/if-up.d/load-firewall
 	sudo /etc/network/if-up.d/load-firewall
-	sudo apt-get install unattended-upgrades -y
 
 ## -- Misc --
 
