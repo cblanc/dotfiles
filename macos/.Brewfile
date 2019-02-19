@@ -16,6 +16,7 @@ brew "libpq", link: true
 brew "chrome-cli"
 brew "go"
 brew "mutt"
+brew "hub"
 
 tap "caskroom/fonts"
 cask "font-fira-code"
