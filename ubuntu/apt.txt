@@ -21,4 +21,5 @@ autoconf
 git
 lynx
 rng-tools
+syncthing
 
