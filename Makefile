@@ -104,7 +104,7 @@ mac_defaults:
 
 ## Update repositories, upgrade existing packages and install linux dependencies
 .PHONY: linux
-linux: apt-upgrade apt-install vim set-timezone link nvm
+linux: ssh-keygen apt-upgrade apt-install vim set-timezone link nvm
 
 ## Install linux packages
 .PHONY: apt-install
@@ -114,6 +114,12 @@ apt-install: apt-update	install-ubuntu-packages neovim keybase docker
 .PHONY: install-ubuntu-packages
 install-ubuntu-packages:
 	cat $(CURDIR)/ubuntu/apt.txt | xargs sudo apt-get install -y
+
+## Generate ssh keys
+.PHONY: ssh-keygen
+ssh-keygen:
+	sudo apt-get install rng-tools
+	if [ -f ~/.ssh/id_rsa ]; then echo 'id_rsa exists, skipping keygen'; else ssh-keygen -b 4096 -t rsa -f id_rsa; fi;
 
 ## Install keybase
 .PHONY: keybase
