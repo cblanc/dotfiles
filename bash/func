@@ -98,3 +98,10 @@ function nm-nuke() {
 function reload() {
   source ~/.bash_profile
 }
+
+# Launch HTTP Server
+function server() {
+  HTTP_PORT=${1:-8001}
+  python -m SimpleHTTPServer $HTTP_PORT
+}
+
