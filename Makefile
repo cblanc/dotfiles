@@ -38,7 +38,7 @@ link:
 	chmod 600 $(CURDIR)/gnupg/gpg.conf $(CURDIR)/gnupg/gpg-agent.conf
 	ln -nsf $(CURDIR)/bash/.editorconfig ~/.editorconfig
 	ln -nsf $(CURDIR)/bash/.ignore ~/.ignore
-	ln -nsf $(CURDIR)/bash/.tmux.confg ~/.tmux.conf
+	ln -nsf $(CURDIR)/bash/.tmux.conf ~/.tmux.conf
 
 ## Install dependencies
 .PHONY: install-deps
