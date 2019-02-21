@@ -105,3 +105,10 @@ function server() {
   python -m SimpleHTTPServer $HTTP_PORT
 }
 
+function load_average() {
+  if [[ $PLATFORM == 'macos' ]]; then
+    sysctl -n vm.loadavg
+  elif [[ $PLATFORM == 'linux' ]]; then
+    cut -d " " -f 1-3 /proc/loadavg
+  fi
+}
