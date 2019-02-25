@@ -27,6 +27,7 @@ link:
 	mkdir -p ~/dev
 	ln -nsf $(CURDIR)/git/.gitconfig ~/.gitconfig
 	ln -nsf $(CURDIR)/git/.gitignore_global ~/.gitignore_global
+	touch ~/.gitconfig.override
 	ln -nsf $(CURDIR)/bash/.inputrc ~/.inputrc
 	ln -nsf $(CURDIR)/bash/.curlrc ~/.curlrc
 	ln -nsf $(CURDIR)/bash/.bashrc ~/.bashrc
