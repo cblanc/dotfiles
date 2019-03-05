@@ -112,3 +112,8 @@ function load_average() {
     cut -d " " -f 1-3 /proc/loadavg
   fi
 }
+
+# Stop and remove container
+drm () {
+  docker stop $1 && docker rm $1
+}
