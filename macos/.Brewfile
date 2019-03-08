@@ -17,6 +17,7 @@ brew "chrome-cli"
 brew "go"
 brew "mutt"
 brew "hub"
+brew "spellcheck"
 
 tap "caskroom/fonts"
 cask "font-fira-code"
