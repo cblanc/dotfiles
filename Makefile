@@ -120,7 +120,7 @@ install-ubuntu-packages:
 .PHONY: ssh-keygen
 ssh-keygen:
 	sudo apt-get install rng-tools
-	if [ -f ~/.ssh/id_rsa ]; then echo 'id_rsa exists, skipping keygen'; else ssh-keygen -b 4096 -t rsa -f $HOME/.ssh/id_rsa; fi;
+	if [ -f ~/.ssh/id_rsa ]; then echo 'id_rsa exists, skipping keygen'; else ssh-keygen -b 4096 -t rsa -f $(HOME)/.ssh/id_rsa; fi;
 
 ## Install keybase
 .PHONY: keybase
