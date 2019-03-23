@@ -46,6 +46,11 @@ l-rvm() {
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 }
 
+# Load kubernetes environment
+l-k8s() {
+  source <(kubectl completion bash)
+}
+
 # Open directory or $1 with default editor
 function p() {
   if [ $# -eq 0 ]; then
