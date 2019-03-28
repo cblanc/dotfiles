@@ -33,6 +33,7 @@ alias C='git aa && git commit'
 alias v='git diff'
 alias b='git branch -rav'
 alias d='cd ~/dotfiles'
+alias g='cd ~/design'
 alias s='cd ~/dev'
 alias a='cd ~'
 

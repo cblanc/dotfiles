@@ -25,6 +25,7 @@ update:
 .PHONY: link
 link:
 	mkdir -p ~/dev
+	mkdir -p ~/design
 	ln -nsf $(CURDIR)/git/.gitconfig ~/.gitconfig
 	ln -nsf $(CURDIR)/git/.gitignore_global ~/.gitignore_global
 	touch ~/.gitconfig.override
