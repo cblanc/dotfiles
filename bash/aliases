@@ -58,3 +58,6 @@ alias gpg-export="gpg --armor --export"
 alias dps="docker ps"
 alias dpa="docker ps -a"
 alias di="docker images"
+
+# k8s
+alias k='kubectl'
