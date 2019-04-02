@@ -44,6 +44,7 @@ l-nvm() {
 # Load rvm
 l-rvm() {
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+  [[ -s "/etc/profile.d/rvm.sh" ]] && source "/rvm/scripts/rvm"
 }
 
 # Load kubernetes environment
