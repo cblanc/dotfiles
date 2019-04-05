@@ -3,7 +3,7 @@
 if [[ $(id -u) -eq 0 ]]; then       # Root
   PS1="\$(jobsindicator)\[\e[2m\]\$(__git_ps1)\[\e[m\] \[\e[31m\]\u\[\e[m\]@\[\e[34m\]\h\[\e[m\]:\W \[\e[90m\]$\[\e[m\] "
 elif [[ -n "$SSH_CLIENT" ]]; then   # SSH session
-  PS1="\$(jobsindicator)\[\e[2m\]\$(__git_ps1)\[\e[m\] \[\e[92m\]\W\[\e[m\] \[\e[90m\]♝\[\e[m\]  "
+  PS1="\$(jobsindicator)\[\e[2m\]\$(__git_ps1)\[\e[m\] \[\e[92m\]\W\[\e[m\] \[\e[90m\]♞\[\e[m\]  "
 else                                # Normal
   PS1="\$(jobsindicator)\[\e[2m\]\$(__git_ps1)\[\e[m\] \W \[\e[90m\]♞\[\e[m\]  "
 fi

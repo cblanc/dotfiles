@@ -61,12 +61,21 @@ function p() {
   fi
 }
 
-# Open directory or $1 with neovim
+# Open directory or $1 with sublime
 function o() {
   if [ $# -eq 0 ]; then
-    nvim
+    subl
   else
-    nvim "$@"
+    subl "$@"
+  fi
+}
+
+# Open directory or $1 with sublime merge
+function i() {
+  if [ $# -eq 0 ]; then
+    smerge
+  else
+    smerge "$@"
   fi
 }
 

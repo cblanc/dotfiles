@@ -33,7 +33,6 @@ alias C='git aa && git commit'
 alias v='git diff'
 alias b='git branch -rav'
 alias d='cd ~/dotfiles'
-alias g='cd ~/design'
 alias s='cd ~/dev'
 alias a='cd ~'
 
@@ -41,9 +40,6 @@ alias a='cd ~'
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-
-# Reload bash profile
-alias re='source ~/.bash_profile'
 
 # git
 alias gc="git clone"
