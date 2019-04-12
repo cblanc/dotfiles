@@ -129,18 +129,18 @@ function load_average() {
 }
 
 # Stop and remove container
-drm () {
+function drm () {
   docker stop $1 && docker rm $1
 }
 
-dka () { 
+function dka () { 
   docker kill $(docker ps -q) # Docker Kill All containers
 }
 
-drma () { 
+function drma () { 
   docker rm $(docker ps -a -q) # Docker ReMove All stopped containers
 }
 
-drmai () { 
+function drmai () { 
   docker rmi $(docker images -q) # Docker ReMove All Images
 }
