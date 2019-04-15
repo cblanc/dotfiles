@@ -44,7 +44,9 @@ alias ....="cd ../../.."
 
 # git
 alias gc="git clone"
-alias gsc="git clone --depth=1"
+alias gsc="git clone --depth=1" # Git Shallow Clone
+alias gsu="git submodule foreach git pull --recurse-submodules origin master" # Git Submodule Update
+alias gsi="git submodule init && git submodule update --recursive --jobs=8" # Git submodule init
 
 # gpg
 alias gpg-new="gpg --default-new-key-algo rsa4096 --gen-key"
