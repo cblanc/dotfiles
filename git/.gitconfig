@@ -81,3 +81,6 @@
 
 [ghi]
   token = !security find-internet-password -a cblanc -s github.com -l 'ghi token' -w
+
+[protocol "keybase"]
+	allow = always
