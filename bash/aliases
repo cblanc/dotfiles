@@ -60,3 +60,7 @@ alias di="docker images"
 
 # k8s
 alias k='kubectl'
+
+# keybase
+alias kbs='keybase ctl start'
+alias kbl='keybase git list'
