@@ -9,6 +9,7 @@
 [commit]
   gpgsign = true
   verbose = true
+  template = ~/.gitmessage
 
 [color]
   ui = true

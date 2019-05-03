@@ -1,0 +1,29 @@
+(feat|fix|docs|style|refactor|perf|test|chore): 
+
+# BODY
+
+# Fixes #N
+# BREAKING CHANGE: 
+
+# --------
+
+#    feat     (new feature)
+#    fix      (bug fix)
+#    refactor (refactoring production code)
+#    style    (formatting, missing semi colons, etc; no code change)
+#    docs     (changes to documentation)
+#    test     (adding or refactoring tests; no production code change)
+#    chore    (updating grunt tasks etc; no production code change)
+
+# Notes
+
+# Breaking Changes** start `BREAKING CHANGE:` with a space or two newlines.
+
+# Provide links or keys to any relevant tickets, articles or other resources
+# Example: Github issue #23
+
+# To close multiple issues, preface each issue reference with one of the above keywords. You must use the keyword before each issue you reference for the keyword to work.
+# For example, This closes #34, closes #23, and closes example_user/example_repo#42 would close issues #34 and #23 in the same repository, and issue #42 in the "example_user/example_repo" repository.
+
+# If the commit reverts a previous commit, it should begin with `revert: `, followed by the header of the reverted commit.
+# In the body it should say: `This reverts commit <hash>.`, where the hash is the SHA of the commit being reverted.
