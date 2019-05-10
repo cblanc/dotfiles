@@ -22,4 +22,5 @@ git
 lynx
 rng-tools
 syncthing
-
+postgresql-client
+libpq-dev
