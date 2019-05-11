@@ -85,3 +85,5 @@
 
 [protocol "keybase"]
 	allow = always
+[pull]
+	rebase = true
