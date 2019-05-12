@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# https://gist.github.com/kates/5915285
+
+# agr - AG Replace
+
+# Search and replace using ag
+
+# E.g. ag Foo Bar
+
+ag "$1" --nogroup | awk '{print substr($1,1,index($1,":")-1);}' | xargs -I {} sed -i '.back' -e "s/$1/$2/g" {}
