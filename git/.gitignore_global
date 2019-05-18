@@ -19,3 +19,4 @@ cache
 Session.vim
 .nyc-output
 *.tgz
+*.back
