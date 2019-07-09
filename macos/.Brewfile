@@ -35,6 +35,8 @@ cask "dropbox"
 cask "docker"
 cask "1password"
 cask "slack"
+cask "notion"
+cask "zoomus"
 
 tap "homebrew/cask-versions"
 cask "iterm2-nightly"
