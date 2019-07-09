@@ -1,3 +1,4 @@
+brew "bash"
 brew "git"
 brew "git-secret"
 brew "git-lfs"
@@ -33,6 +34,7 @@ cask "dash"
 cask "dropbox"
 cask "docker"
 cask "1password"
+cask "slack"
 
 tap "homebrew/cask-versions"
 cask "iterm2-nightly"
