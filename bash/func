@@ -149,3 +149,9 @@ function drmai () {
 function n() {
   git rebase -i HEAD~$1
 }
+
+# Get dev ip
+function devip () {
+  dcd ls | grep dev | awk '{print $3}'
+}
+
