@@ -108,7 +108,7 @@ mac_defaults:
 
 ## Update repositories, upgrade existing packages and install linux dependencies
 .PHONY: linux
-linux: ssh-keygen apt-upgrade apt-install vim set-timezone link nvm rvm
+linux: ssh-keygen apt-upgrade apt-install vim set-timezone link nvm rvm chrome
 
 ## Install linux packages
 .PHONY: apt-install
@@ -172,6 +172,13 @@ apt-update:
 .PHONY: set-timezone
 set-timezone:
 	sudo timedatectl set-timezone UTC
+
+## Setup Chrome on linux
+.PHONY: chrome
+chrome:
+	sudo apt-get install -y libappindicator1 fonts-liberation
+	wget -P /tmp/ https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+	sudo dpkg -i /tmp/google-chrome-stable_current_amd64.deb
 
 ## Provisions and hardens root user
 ## - Creates a new user and copies SSH public key
