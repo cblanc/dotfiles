@@ -10,7 +10,6 @@ fi
 if [[ $PLATFORM == 'linux' ]]; then
   alias ls='ls --color=auto'
   alias f='BROWSER="lynx" git-open.bash &'
-  alias sudo='sudo '
 fi
 
 # Launch silversearch with default ignore
