@@ -38,7 +38,8 @@ link:
 	ln -nsf $(CURDIR)/gnupg/gpg.conf ~/.gnupg/gpg.conf
 	ln -nsf $(CURDIR)/gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 	chown -R "$$(whoami)" ~/.gnupg
-	chmod 600 $(CURDIR)/gnupg/gpg.conf $(CURDIR)/gnupg/gpg-agent.conf
+	find ~/.gnupg -type f -exec chmod 600 {} \;
+	find ~/.gnupg -type d -exec chmod 700 {} \;
 	ln -nsf $(CURDIR)/bash/.editorconfig ~/.editorconfig
 	ln -nsf $(CURDIR)/bash/.ignore ~/.ignore
 	ln -nsf $(CURDIR)/bash/.tmux.conf ~/.tmux.conf
