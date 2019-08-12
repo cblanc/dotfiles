@@ -108,7 +108,7 @@ mac_defaults:
 
 ## Update repositories, upgrade existing packages and install linux dependencies
 .PHONY: linux
-linux: ssh-keygen apt-upgrade apt-install vim set-timezone link nvm
+linux: ssh-keygen apt-upgrade apt-install vim set-timezone link nvm rvm
 
 ## Install linux packages
 .PHONY: apt-install
