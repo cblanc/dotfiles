@@ -31,6 +31,8 @@ alias x='git status'
 alias c='git commit'
 alias C='git aa && git commit'
 alias v='git diff'
+# Load editor with modified files opened in panels (vi/vim only)
+alias pv='p -O `git ls-files --modified`'
 alias b='git branch -rav'
 alias d='cd ~/dotfiles'
 alias s='cd ~/dev'
