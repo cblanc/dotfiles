@@ -144,3 +144,8 @@ function drma () {
 function drmai () { 
   docker rmi $(docker images -q) # Docker ReMove All Images
 }
+
+# Calls interactive rebase going $0 commits back
+function n() {
+  git rebase -i HEAD~$1
+}
