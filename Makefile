@@ -110,6 +110,10 @@ mac_defaults:
 .PHONY: linux
 linux: ssh-keygen apt-upgrade apt-install vim set-timezone link nvm rvm chrome
 
+## Minimal linux setup - vim, neovim, bash
+.PHONY: bare
+bare: neovim vim link
+
 ## Install linux packages
 .PHONY: apt-install
 apt-install: apt-update	install-ubuntu-packages neovim keybase docker
