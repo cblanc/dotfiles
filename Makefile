@@ -43,6 +43,7 @@ link:
 	ln -nsf $(CURDIR)/bash/.editorconfig ~/.editorconfig
 	ln -nsf $(CURDIR)/bash/.ignore ~/.ignore
 	ln -nsf $(CURDIR)/bash/.tmux.conf ~/.tmux.conf
+	touch ~/.pushover
 
 ## Install dependencies
 .PHONY: install-deps
