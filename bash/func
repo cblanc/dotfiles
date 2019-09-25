@@ -11,7 +11,7 @@ jobscount() {
 
 # Prints dot if background jobs
 jobsindicator() {
-  (( $(jobs | wc -l) > 0 )) && echo -n "☉ "  
+  (( $(jobs | wc -l) > 0 )) && echo -n "☉ "
 }
 
 # Nuke shell history and force exit (prevents memory from repopulating)
@@ -45,6 +45,11 @@ l-nvm() {
 l-rvm() {
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
   [[ -s "/etc/profile.d/rvm.sh" ]] && source "/etc/profile.d/rvm.sh"
+}
+
+# Load haskell
+l-has() {
+  [[ -s "$HOME/.ghcup/env" ]] && source "$HOME/.ghcup/env"
 }
 
 # Load kubernetes environment
@@ -133,15 +138,15 @@ function drm () {
   docker stop $1 && docker rm $1
 }
 
-function dka () { 
+function dka () {
   docker kill $(docker ps -q) # Docker Kill All containers
 }
 
-function drma () { 
+function drma () {
   docker rm $(docker ps -a -q) # Docker ReMove All stopped containers
 }
 
-function drmai () { 
+function drmai () {
   docker rmi $(docker images -q) # Docker ReMove All Images
 }
 

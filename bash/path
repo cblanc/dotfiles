@@ -4,3 +4,6 @@ export PATH="$PATH:~/bin/path"
 
 # Add /dotfiles/bash/bin/
 export PATH="$PATH:${DOTFILE_BASH_DIR}/bin"
+
+# Link cabal
+export PATH="$PATH:~/.cabal/bin"
