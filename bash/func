@@ -47,6 +47,11 @@ l-rvm() {
   [[ -s "/etc/profile.d/rvm.sh" ]] && source "/etc/profile.d/rvm.sh"
 }
 
+# Load env env
+l-car() {
+  [[ -s "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
+}
+
 # Load haskell
 l-has() {
   [[ -s "$HOME/.ghcup/env" ]] && source "$HOME/.ghcup/env"
