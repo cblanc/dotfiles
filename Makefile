@@ -140,7 +140,7 @@ keybase:
 	sudo dpkg -i keybase_amd64.deb || true && \
 	sudo apt-get install -f -y && \
 	run_keybase && \
-	rm keybase_amd64.deb
+	sudo rm keybase_amd64.deb
 
 ## Install neovim
 .PHONY: neovim
