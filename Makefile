@@ -55,6 +55,7 @@ nvm:
 	git clone https://github.com/creationix/nvm.git ~/.nvm
 	cd ~/.nvm && \
   git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
+	source ~/.nvm/nvm.sh
 
 ## Install rvm
 .PHONY: rvm
@@ -109,9 +110,10 @@ mac_defaults:
 
 ## Update repositories, upgrade existing packages and install linux dependencies
 .PHONY: linux
-linux: ssh-keygen apt-upgrade apt-install vim set-timezone link nvm rvm chrome
+linux: ssh-keygen apt-upgrade apt-install nvm vim set-timezone link rvm chrome
 
 ## Minimal linux setup - vim, neovim, bash
+
 .PHONY: bare
 bare: neovim vim link
 
