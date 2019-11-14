@@ -88,7 +88,7 @@ macos: homebrew
 
 ## Install homebrew and child applications on macos. Notably,
 ## - bash 4.3 and adds to /etc/shells
-## - macos applications  
+## - macos applications
 ## - fonts
 .PHONY: homebrew
 homebrew:
@@ -161,6 +161,8 @@ docker: apt-update
    $$(lsb_release -cs) \
    stable"
 	sudo apt-get update
+	sudo groupadd docker
+	sudo usermode -aG "$$(whoami)"
 	sudo apt-get install docker-ce -y
 	sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$$(uname -s)-$$(uname -m)" -o /usr/local/bin/docker-compose
 	sudo chmod +x /usr/local/bin/docker-compose
@@ -206,7 +208,7 @@ provision-user:
 	sudo cp /root/.ssh/authorized_keys "/home/$${NEW_USER}/.ssh/authorized_keys" && \
 	sudo chown -R "$${NEW_USER}:$${NEW_USER}" "/home/$${NEW_USER}/.ssh" && \
 	sudo chmod 700 "/home/$${NEW_USER}/.ssh" && \
-	sudo chmod 600 "/home/$${NEW_USER}/.ssh/authorized_keys" 
+	sudo chmod 600 "/home/$${NEW_USER}/.ssh/authorized_keys"
 
 ## Hardens network setup
 ## - Reconfigures sshd_config
@@ -269,4 +271,3 @@ help:
 			} \
 		}' \
 		$(MAKEFILE_LIST)
-
