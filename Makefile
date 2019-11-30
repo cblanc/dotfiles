@@ -52,10 +52,12 @@ install-deps: $(OS)
 ## Installs nvm
 .PHONY: nvm
 nvm:
-	git clone https://github.com/creationix/nvm.git ~/.nvm
+	git clone https://github.com/creationix/nvm.git ~/.nvm || true
 	cd ~/.nvm && \
-  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
-	source ~/.nvm/nvm.sh
+	  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)` && \
+	  . ./nvm.sh && \
+	  nvm install --lts 12
+
 
 ## Install rvm
 .PHONY: rvm
@@ -75,7 +77,7 @@ add-gpg-keys:
 vim:
 	rm -rf ~/.vim
 	git clone --recurse-submodules -j8 https://github.com/cblanc/.vim ~/.vim
-	cd ~/.vim && make init
+	. ~/.nvm/nvm.sh && cd ~/.vim && make init
 
 
 
@@ -161,8 +163,8 @@ docker: apt-update
    $$(lsb_release -cs) \
    stable"
 	sudo apt-get update
-	sudo groupadd docker
-	sudo usermode -aG "$$(whoami)"
+	sudo groupadd docker || true
+	sudo usermod -aG docker "$$(whoami)"
 	sudo apt-get install docker-ce -y
 	sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$$(uname -s)-$$(uname -m)" -o /usr/local/bin/docker-compose
 	sudo chmod +x /usr/local/bin/docker-compose
@@ -185,7 +187,7 @@ set-timezone:
 ## Setup Chrome on linux
 .PHONY: chrome
 chrome:
-	sudo apt-get install -y libappindicator1 fonts-liberation
+	sudo apt-get install -y libappindicator3-1
 	wget -P /tmp/ https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 	sudo dpkg -i /tmp/google-chrome-stable_current_amd64.deb
 
