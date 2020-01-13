@@ -15,11 +15,6 @@ fi
 # Launch silversearch with default ignore
 alias ag='ag --path-to-ignore ~/.ignore'
 
-# Edit shortcuts
-alias e-bash="$EDITOR ~/.bash_profile"
-alias e-gitconfig="$EDITOR ~/.gitconfig"
-alias e-config="$EDITOR ~/.ssh/config"
-
 # doctl shortcuts
 alias dosh='doctl compute ssh'
 alias dosh-root='doctl compute ssh --ssh-user root'
@@ -32,10 +27,9 @@ alias c='git commit'
 alias C='git aa && git commit'
 alias v='git diff'
 # Load editor with modified files opened in panels (vi/vim only)
-alias pv='p -O `git ls-files --modified`'
+alias V='p -O `git ls-files --modified`'
 alias pc='p -S Session.vim'
 alias b='git branch -rav'
-alias d='cd ~/dotfiles'
 alias s='cd ~/dev'
 alias a='cd ~'
 
