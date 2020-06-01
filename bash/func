@@ -133,6 +133,10 @@ function drmai () {
   docker rmi $(docker images -q) -f # Docker ReMove All Images (- force)
 }
 
+function dsa() {
+  docker stop $(docker ps -a -q) # Docker Stop All
+}
+
 function dsh () {
   docker exec -it $1 sh # Shell into container
 }
