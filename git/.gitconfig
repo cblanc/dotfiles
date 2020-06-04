@@ -1,7 +1,7 @@
 [user]
   signingkey = ED752FEC51A98CFE
   name = Christopher Blanchard
-  email = cablanchard@gmail.com
+  email = git@nf3.co
 
 [include]
 	path = .gitconfig.override
