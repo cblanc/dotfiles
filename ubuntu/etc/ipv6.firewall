@@ -2,7 +2,6 @@
 
 #  Allow all loopback (lo0) traffic and drop all traffic to 127/8 that doesn't use lo0
 -A INPUT -i lo -j ACCEPT
--A INPUT -d ::1/128 -j REJECT
 
 #  Accept all established inbound connections
 -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
@@ -21,4 +20,3 @@
 -A FORWARD -j DROP
 
 COMMIT
-

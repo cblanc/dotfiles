@@ -232,9 +232,9 @@ harden:
 iptables:
 	sudo cp $(CURDIR)/ubuntu/etc/ipv4.firewall /etc/ipv4.firewall
 	sudo cp $(CURDIR)/ubuntu/etc/ipv6.firewall /etc/ipv6.firewall
-	sudo cp $(CURDIR)/ubuntu/etc/load-firewall /etc/network/if-up.d/load-firewall
-	sudo chmod +x /etc/network/if-up.d/load-firewall
-	sudo /etc/network/if-up.d/load-firewall
+	sudo iptables-restore < /etc/ipv4.firewall
+	sudo iptables-restore < /etc/ipv6.firewall
+	sudo iptables-save
 
 ## -- Misc --
 
