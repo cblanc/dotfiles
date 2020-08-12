@@ -147,7 +147,6 @@ keybase:
 ## Install neovim
 .PHONY: neovim
 neovim:
-	sudo add-apt-repository ppa:neovim-ppa/stable -y
 	sudo apt-get update
 	sudo apt-get install neovim -y
 	mkdir -p ~/.local/share/nvim/
