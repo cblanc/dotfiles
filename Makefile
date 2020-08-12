@@ -52,13 +52,11 @@ install-deps: $(OS)
 ## Installs nvm
 .PHONY: nvm
 nvm:
-	git clone https://github.com/creationix/nvm.git ~/.nvm || true
-	npm config delete prefix
+	git clone https://github.com/creationix/nvm.git ~/.nvm
 	cd ~/.nvm && \
 	  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)` && \
 	  . ./nvm.sh && \
 	  nvm install --lts 12
-
 
 ## Install rvm
 .PHONY: rvm
