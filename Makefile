@@ -53,6 +53,7 @@ install-deps: $(OS)
 .PHONY: nvm
 nvm:
 	git clone https://github.com/creationix/nvm.git ~/.nvm || true
+	npm config delete prefix
 	cd ~/.nvm && \
 	  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)` && \
 	  . ./nvm.sh && \
@@ -121,7 +122,7 @@ bare: neovim vim link
 
 ## Install linux packages
 .PHONY: apt-install
-apt-install: apt-update	install-ubuntu-packages neovim keybase docker
+apt-install: apt-update	install-ubuntu-packages neovim docker
 
 ## Install packages from packages.ubuntu.com
 .PHONY: install-ubuntu-packages
