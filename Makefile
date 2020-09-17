@@ -185,7 +185,7 @@ set-timezone:
 ## Setup Chrome on linux
 .PHONY: chrome
 chrome:
-	sudo apt-get install -y libappindicator3-1
+	sudo apt-get install -y libappindicator3-1 fonts-liberation libgbm1 libx11-xcb1 libxcb-dri3-0 xdg-utils
 	wget -P /tmp/ https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 	sudo dpkg -i /tmp/google-chrome-stable_current_amd64.deb
 
