@@ -15,11 +15,6 @@ fi
 # Launch silversearch with default ignore
 alias ag='ag --path-to-ignore ~/.ignore'
 
-# doctl shortcuts
-alias dosh='doctl compute ssh'
-alias dosh-root='doctl compute ssh --ssh-user root'
-alias dcd='doctl compute droplet'
-
 # Shortcuts
 alias z='git lo'
 alias x='git status'
@@ -40,9 +35,6 @@ alias ....="cd ../../.."
 
 # git
 alias gc="git clone"
-alias gsc="git clone --depth=1" # Git Shallow Clone
-alias gsu="git submodule foreach git pull --recurse-submodules origin master" # Git Submodule Update
-alias gsi="git submodule init && git submodule update --recursive --jobs=8" # Git submodule init
 
 # gpg
 alias gpg-new="gpg --default-new-key-algo rsa4096 --gen-key"
@@ -52,14 +44,6 @@ alias gpg-export="gpg --armor --export"
 # docker
 alias dps="docker ps"
 alias dpa="docker ps -a"
-alias di="docker images"
 
 # k8s
 alias k='kubectl'
-
-# keybase
-alias kbs='keybase ctl start'
-alias kbl='keybase git list'
-
-# ruby
-alias ber='bundle exec rspec'

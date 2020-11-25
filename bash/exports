@@ -9,7 +9,7 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
    PLATFORM='macos'
 fi
 export PLATFORM
- 
+
 # Fix for issue (Inappropriate ioctl for device): https://github.com/keybase/keybase-issues/issues/2798
 export GPG_TTY=$(tty)
 
@@ -27,7 +27,6 @@ fi
 export EDITOR
 
 source "${DOTFILE_BASH_DIR}/vendor/git-completion.bash"
-source "${DOTFILE_BASH_DIR}/vendor/iterm2_shell_integration.bash"
 
 # Set nvm home directory
 export NVM_DIR="$HOME/.nvm"
@@ -41,5 +40,5 @@ export GLOBAL_NODE_MODULES=/tmp/.global_node_modules/
 FULL_NAME='Christopher Blanchard'
 export FULL_NAME
 
-CONTACT_EMAIL="cablanchard\@gmail.com"
+CONTACT_EMAIL="chris@nf3.co"
 export CONTACT_EMAIL

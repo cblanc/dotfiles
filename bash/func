@@ -14,12 +14,6 @@ jobsindicator() {
   (( $(jobs | wc -l) > 0 )) && echo -n "☉ "
 }
 
-# Nuke shell history and force exit (prevents memory from repopulating)
-# https://askubuntu.com/questions/191999/how-to-clear-bash-history-completely
-nuke_history() {
-  cat /dev/null > ~/.bash_history && history -c && exit
-}
-
 # Trims string
 trim() {
   awk '{$1=$1};1'
@@ -47,16 +41,6 @@ l-rvm() {
   [[ -s "/etc/profile.d/rvm.sh" ]] && source "/etc/profile.d/rvm.sh"
 }
 
-# Load env env
-l-car() {
-  [[ -s "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
-}
-
-# Load haskell
-l-has() {
-  [[ -s "$HOME/.ghcup/env" ]] && source "$HOME/.ghcup/env"
-}
-
 # Load kubernetes environment
 l-k8s() {
   source <(kubectl completion bash)
@@ -68,24 +52,6 @@ function p() {
     "${EDITOR}"
   else
     "${EDITOR}" "$@"
-  fi
-}
-
-# Open directory or $1 with sublime
-function o() {
-  if [ $# -eq 0 ]; then
-    subl
-  else
-    subl "$@"
-  fi
-}
-
-# Open directory or $1 with sublime merge
-function i() {
-  if [ $# -eq 0 ]; then
-    smerge
-  else
-    smerge "$@"
   fi
 }
 
