@@ -8,11 +8,9 @@ brew "gnupg"
 brew "htop"
 brew "neovim"
 brew "the_silver_searcher"
-brew "s3cmd"
 brew "kubernetes-cli"
 brew "imagemagick"
 brew "libpq", link: true
-brew "go"
 brew "python"
 
 tap "homebrew/cask-fonts"

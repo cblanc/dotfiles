@@ -8,4 +8,3 @@ else                                # Normal
   PS1="\$(jobsindicator)\[\e[2m\]\$(__git_ps1)\[\e[m\] \W \[\e[90m\]♞\[\e[m\]  "
 fi
 export PS1
-

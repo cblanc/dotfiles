@@ -25,7 +25,6 @@ update:
 .PHONY: link
 link:
 	mkdir -p ~/dev
-	mkdir -p ~/design
 	ln -nsf $(CURDIR)/git/.gitconfig ~/.gitconfig
 	ln -nsf $(CURDIR)/git/.gitignore_global ~/.gitignore_global
 	ln -nsf $(CURDIR)/git/.gitmessage ~/.gitmessage
@@ -43,7 +42,6 @@ link:
 	ln -nsf $(CURDIR)/bash/.editorconfig ~/.editorconfig
 	ln -nsf $(CURDIR)/bash/.ignore ~/.ignore
 	ln -nsf $(CURDIR)/bash/.tmux.conf ~/.tmux.conf
-	touch ~/.pushover
 
 ## Install dependencies
 .PHONY: install-deps
@@ -56,7 +54,7 @@ nvm:
 	cd ~/.nvm && \
 	  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)` && \
 	  . ./nvm.sh && \
-	  nvm install --lts 12
+	  nvm install --lts 14
 
 ## Install rvm
 .PHONY: rvm
@@ -77,7 +75,6 @@ vim:
 	rm -rf ~/.vim
 	git clone --recurse-submodules -j8 https://github.com/cblanc/.vim ~/.vim
 	. ~/.nvm/nvm.sh && cd ~/.vim && make init
-
 
 
 

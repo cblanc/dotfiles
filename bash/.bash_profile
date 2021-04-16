@@ -22,3 +22,5 @@ source "${DOTFILE_BASH_DIR}/prompt"
 
 [[ -f ~/.chrxv.bash ]] && source ~/.chrxv.bash
 
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

@@ -46,15 +46,6 @@ l-k8s() {
   source <(kubectl completion bash)
 }
 
-# Open directory or $1 with default editor
-function p() {
-  if [ $# -eq 0 ]; then
-    "${EDITOR}"
-  else
-    "${EDITOR}" "$@"
-  fi
-}
-
 # Reload bash profile
 function reload() {
   source ~/.bash_profile
@@ -64,14 +55,6 @@ function reload() {
 function server() {
   HTTP_PORT=${1:-8001}
   python -m SimpleHTTPServer $HTTP_PORT
-}
-
-function load_average() {
-  if [[ $PLATFORM == 'macos' ]]; then
-    sysctl -n vm.loadavg
-  elif [[ $PLATFORM == 'linux' ]]; then
-    cut -d " " -f 1-3 /proc/loadavg
-  fi
 }
 
 # Stop and remove container
@@ -103,20 +86,7 @@ function dsa() {
   docker stop $(docker ps -a -q) # Docker Stop All
 }
 
-function dsh () {
-  docker exec -it $1 sh # Shell into container
-}
-
-function dbash () {
-  docker exec -it $1 bash # Bash Shell into container
-}
-
 # Calls interactive rebase going $0 commits back
 function n() {
   git rebase -i HEAD~$1
-}
-
-# Get dev ip
-function devip () {
-  dcd ls | grep dev | awk '{print $3}'
 }

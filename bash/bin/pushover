@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-# Thanks to https://gist.github.com/atika/9108fd745ef83a7a6f21
-
-set -o errexit
-set -o nounset 
-set -o pipefail
-
