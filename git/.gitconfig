@@ -87,3 +87,5 @@
 	allow = always
 [pull]
 	rebase = true
+[gpg]
+	program = /usr/local/bin/gpg
