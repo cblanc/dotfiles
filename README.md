@@ -12,4 +12,3 @@ cd dotfiles && make init
 ```
 make update
 ```
-
