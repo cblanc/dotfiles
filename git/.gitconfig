@@ -16,7 +16,7 @@
 
 [alias]
   co = checkout
-  co = cherry-pick
+  cp = cherry-pick
   aa = add --all
   ff = merge --ff-only
   fa = fetch --all
