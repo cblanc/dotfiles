@@ -76,8 +76,6 @@ vim:
 	git clone --recurse-submodules -j8 https://github.com/cblanc/.vim ~/.vim
 	. ~/.nvm/nvm.sh && cd ~/.vim && make init
 
-
-
 ## -- Macos Bootstrap --
 
 ## Install macos dependencies
@@ -99,10 +97,6 @@ homebrew:
 .PHONY: mac_defaults
 mac_defaults:
 	bash $(CURDIR)/macos/defaults.sh
-
-
-
-
 
 ## -- Linux Bootstrap --
 
