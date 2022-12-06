@@ -34,8 +34,6 @@ link:
 	ln -nsf $(CURDIR)/bash/.bashrc ~/.bashrc
 	ln -nsf $(CURDIR)/bash/.bash_profile ~/.bash_profile
 	mkdir -p ~/.gnupg
-	ln -nsf $(CURDIR)/gnupg/gpg.conf ~/.gnupg/gpg.conf
-	ln -nsf $(CURDIR)/gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 	chown -R "$$(whoami)" ~/.gnupg
 	find ~/.gnupg -type f -exec chmod 600 {} \;
 	find ~/.gnupg -type d -exec chmod 700 {} \;
@@ -62,12 +60,6 @@ rvm:
 	sudo apt-add-repository -y ppa:rael-gc/rvm
 	sudo apt-get update
 	sudo apt-get install rvm -y
-
-## Add frequently used gpg keys
-.PHONY: add-gpg-keys
-add-gpg-keys:
-	gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-
 
 ## Clear previous vim config and install vim config from cblanc/.vim
 .PHONY: vim
