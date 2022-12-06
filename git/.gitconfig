@@ -1,7 +1,7 @@
 [user]
-  signingkey = ED752FEC51A98CFE
   name = Christopher Blanchard
   email = git@nf3.co
+	signingkey = ~/.sshkeys/github.pub
 
 [include]
 	path = .gitconfig.override
@@ -58,6 +58,10 @@
   insteadOf = "gi:"
   pushInsteadOf = "git@github.com:ideal-postcodes/"
 
+[url "git@github.com:addresszen/"]
+  insteadOf = "ga:"
+  pushInsteadOf = "git@github.com:addresszen/"
+
 [color "branch"]
   current = yellow reverse
   local = yellow
@@ -90,6 +94,6 @@
 [pull]
 	rebase = true
 [gpg]
-	program = /usr/local/bin/gpg
+	format = ssh
 [init]
 	defaultBranch = main
