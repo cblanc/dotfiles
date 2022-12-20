@@ -33,10 +33,6 @@ link:
 	ln -nsf $(CURDIR)/bash/.curlrc ~/.curlrc
 	ln -nsf $(CURDIR)/bash/.bashrc ~/.bashrc
 	ln -nsf $(CURDIR)/bash/.bash_profile ~/.bash_profile
-	mkdir -p ~/.gnupg
-	chown -R "$$(whoami)" ~/.gnupg
-	find ~/.gnupg -type f -exec chmod 600 {} \;
-	find ~/.gnupg -type d -exec chmod 700 {} \;
 	ln -nsf $(CURDIR)/bash/.editorconfig ~/.editorconfig
 	ln -nsf $(CURDIR)/bash/.ignore ~/.ignore
 	ln -nsf $(CURDIR)/bash/.tmux.conf ~/.tmux.conf
@@ -116,16 +112,6 @@ ssh-keygen:
 	sudo apt-get install rng-tools
 	if [ -f ~/.ssh/id_rsa ]; then echo 'id_rsa exists, skipping keygen'; else ssh-keygen -b 4096 -t rsa -f $(HOME)/.ssh/id_rsa; fi;
 
-## Install keybase
-.PHONY: keybase
-keybase:
-	cd /tmp && \
-	curl -O https://prerelease.keybase.io/keybase_amd64.deb && \
-	sudo dpkg -i keybase_amd64.deb || true && \
-	sudo apt-get install -f -y && \
-	run_keybase && \
-	sudo rm keybase_amd64.deb
-
 ## Install neovim
 .PHONY: neovim
 neovim:
@@ -137,7 +123,7 @@ neovim:
 ## Install docker and docker-compose
 .PHONY: docker
 docker: apt-update
-	sudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common -y
+	sudo apt-get install apt-transport-https ca-certificates curl software-properties-common -y
 	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 	sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
