@@ -35,6 +35,10 @@ l-nvm() {
   [[ -s "$NVM_DIR/bash_completion" ]] && source "$NVM_DIR/bash_completion"
 }
 
+l-brew() {
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+}
+
 # Load rvm
 l-rvm() {
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
