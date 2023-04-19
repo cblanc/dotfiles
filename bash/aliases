@@ -2,14 +2,10 @@
 
 if [[ $PLATFORM == 'macos' ]]; then
   alias ls='ls -G'
-  alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
-  alias smerge='/Applications/Sublime\ Merge.app/Contents/SharedSupport/bin/smerge'
-  alias f='BROWSER="chrome-cli open" git-open.bash &'
 fi
 
 if [[ $PLATFORM == 'linux' ]]; then
   alias ls='ls --color=auto'
-  alias f='BROWSER="lynx" git-open.bash &'
 fi
 
 # Launch silversearch with default ignore
@@ -21,9 +17,6 @@ alias x='git status'
 alias c='git commit'
 alias C='git aa && git commit'
 alias v='git diff'
-# Load editor with modified files opened in panels (vi/vim only)
-alias V='p -O `git ls-files --modified`'
-alias pc='p -S Session.vim'
 alias b='git branch -rav'
 alias s='cd ~/dev'
 alias a='cd ~'
@@ -35,11 +28,6 @@ alias ....="cd ../../.."
 
 # git
 alias gc="git clone"
-
-# gpg
-alias gpg-new="gpg --default-new-key-algo rsa4096 --gen-key"
-alias gpg-list="gpg --list-secret-keys --keyid-format LONG"
-alias gpg-export="gpg --armor --export"
 
 # docker
 alias dps="docker ps"

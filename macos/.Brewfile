@@ -22,4 +22,3 @@ cask "dash"
 cask "notion"
 
 tap "homebrew/cask-versions"
-cask "iterm2-nightly"
